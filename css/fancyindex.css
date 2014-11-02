@@ -120,9 +120,13 @@ html, body {
   background: none;
 }
 
+/*
+Show 'Parent Directory' link in file listing
+See https://github.com/TheInsomniac/Nginx-Fancyindex-Theme/issues/1#issuecomment-43936700
 tbody tr:first-child {
   display: none;
 }
+*/
 
 tr.e {
   background:#f7f7f7;
