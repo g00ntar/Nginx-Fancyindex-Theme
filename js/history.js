@@ -60,9 +60,13 @@ if (!!(window.history && history.pushState)) {
       var div = document.createElement('div');
       div.innerHTML = req.responseText;
       var elements = div.getElementsByClassName('box-content')[0];
-      target.innerHTML = elements.innerHTML;
-      initHistory();
-      return true;
+      if (elements) {
+        target.innerHTML = elements.innerHTML;
+        initHistory();
+        return true;
+      } else {
+        window.location.replace(href);
+      }
     // Terrible error catching implemented! Basically, if the ajax request fails
     // we'll just refresh the entire page with the new URL.
     } else {
